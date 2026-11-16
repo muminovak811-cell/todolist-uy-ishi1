@@ -1,0 +1,116 @@
+.notes {
+    .container {
+        max-width: 900px;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 24px;
+
+        &__title {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--title);
+        }
+
+        &__btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--bg);
+            padding: 10px 16px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+
+            span {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 20px;
+                color: var(--purple);
+            }
+        }
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        margin-top: 24px;
+        gap: 16px;
+
+        &.active {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            .notes__card__info {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .notes__card__btns {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 800px) {
+            &.active {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            &.active {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    &__card {
+        background-color: var(--bg);
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        &__info {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        &__title {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: var(--title);
+        }
+
+        &__date {
+            font-size: 12px;
+            color: var(--date);
+        }
+
+        &__text {
+            font-size: 13px;
+            line-height: 18px;
+            color: var(--title);
+            word-break: break-word;
+        }
+
+        &__btns {
+            display: flex;
+            justify-content: flex-end;
+            gap: 16px;
+        }
+    }
+}
+
+.nonote {
+    text-align: center;
+    margin-top: 50px;
+    color: var(--text);
+}
